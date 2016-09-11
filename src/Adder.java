@@ -1,5 +1,3 @@
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 import java.util.ArrayList;
 
 /**
@@ -21,7 +19,7 @@ public class Adder implements Runnable {
     @Override
     public void run() {
 
-        if (list.size() >= Assisgnment.THRESHOLD) {
+        if (list.size() >= Assignment.THRESHOLD) {
             ArrayList<Integer> firstHalf = new ArrayList<>();
             ArrayList<Integer> secondHalf = new ArrayList<>();
             // Divide
