@@ -4,24 +4,28 @@ import java.util.ArrayList;
  * Created by Matyas on 9/7/2016.
  */
 public class BubbleSorter {
-    ArrayList<Integer> randomNumbers = new ArrayList<>();
-
-    public void inputList(ArrayList listToSort){
-        randomNumbers = listToSort;
-    }
+    private ArrayList<Integer> result = new ArrayList<>();
 
 
-    public void sort() {
+    public void sort(ArrayList<Integer> list) {
+
         int tempint;
-
-        for (int i = 0; i < randomNumbers.size(); i++) {
-            for (int j = 0; j < randomNumbers.size() - i - 1; j++) {
-                if (randomNumbers.get(j) > randomNumbers.get(j + 1)) {
-                    tempint = randomNumbers.get(j + 1);
-                    randomNumbers.set(j + 1, randomNumbers.get(j));
-                    randomNumbers.set(j, tempint);
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.size() - i - 1; j++) {
+                if (list.get(j) > list.get(j + 1)) {
+                    tempint = list.get(j + 1);
+                    list.set(j + 1, list.get(j));
+                    list.set(j, tempint);
                 }
             }
+        }
+        this.result = list;
+    }
+    public ArrayList<Integer> getList(){
+        if (result != null){
+            return result;
+        }else {
+            return new ArrayList<>();
         }
     }
 }
